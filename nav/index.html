@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Demo</title>
+        <style>
+			header nav{
+				width: 100%;
+				height: 100%;
+				z-index:500;
+				display:inline-block;
+				font-family: 'Roboto Slab', Arial, sans-serif;
+				font-size: 16px;
+				color: #ffffff;
+			}
+			@media only screen and (max-width : 39.99em) {
+				header nav{
+					position: absolute;
+					width: auto;
+					transform: none;
+					text-align: center;
+					margin: 0 auto;
+					right: 0;
+					height: 100%;
+					padding-left: 0px;
+				}
+			}
+				header nav .mobile-search{
+					display: none;
+				}
+				@media only screen and (max-width : 39.99em) {
+					header nav .mobile-search {
+						display: inline-flex;
+						align-items: center;
+						height: 100%;
+						padding-right: 8px;
+						border-right: 2px solid #112d31;
+					}
+					header nav .mobile-search a {
+						display: flex;
+					}
+					header nav .mobile-search a .icon-search {
+						transform: scale(0.9);
+					}
+				}
+				header nav input.toggle-menu-checkbox,
+				header nav input.toggle-menu-checkbox + label {
+					display: none;
+				}
+				@media only screen and (max-width : 39.99em) {
+					header nav input.toggle-menu-checkbox + label {
+						display: inline-block;
+						position: relative;
+						cursor: pointer;
+						color: #000;
+						text-align:center;
+						margin-right:10px;
+						margin-left: 8px;
+						vertical-align: top;
+					}
+				}
+					header nav input.toggle-menu-checkbox + label i.icon-menu {
+						vertical-align:middle;
+					}
+					header nav input.toggle-menu-checkbox + label span {
+						vertical-align:middle;
+						display: inline-block;
+						margin: 0 4px;
+						font-size: 16px;
+						font-family: proxima-nova;
+					}
+				header nav .menu{
+					height: 100%;
+				}
+				@media only screen and (max-width : 39.99em) {
+					header nav .menu {
+						margin: 0px;
+						top: 0;
+						position: fixed;
+						width: 100%;
+						left: 0;
+						transition: left 0.5s ease-in-out; /*animation effect for menu appearing */
+					}
+					header nav input.toggle-menu-checkbox:checked ~ .menu {
+						left: 100%;
+					}
+				}
+					header nav .menu a:visited,
+					header nav .menu a:hover,
+					header nav .menu a:active {
+						color: #ffffff;
+						text-decoration: none;	
+					}
+					header nav .menu .menu-head{
+						display: none;
+						align-items: center;
+						justify-content: flex-end;
+						background: grey;
+						min-height: 32px;
+						padding: 8px;
+						
+					}
+					@media only screen and (max-width : 39.99em) {
+						header nav .menu .menu-head{
+							display: flex;
+						}
+					}
+						header nav .menu .menu-head button.close-menu-btn {
+							border: none;
+							display: inline-block;
+							margin: 10px 16px 6px 16px;
+						}
+					header nav .menu .menu-body{
+						height: 100%;
+					}
+					@media only screen and (max-width : 39.99em) {
+						header nav .menu .menu-body{
+							overflow: scroll;
+							height: calc(100% - 48px);
+						}
+					}
+						header nav .menu .menu-body > ul {
+							position: relative;
+							list-style: none;
+							margin-top: 0px;
+							padding: 0;
+							height: 100%;
+						}
+							@media only screen and (max-width : 39.99em) {
+								header nav .menu .menu-body > ul {
+									margin-top: 66px;
+									margin-left: 26px;
+									margin-right: 26px;
+								}
+							}
+							header nav .menu .menu-body > ul li {
+								display: inline-block;
+								text-align: left;
+								height: 100%;
+							}
+								@media only screen and (max-width : 39.99em) {	
+									header nav .menu .menu-body > ul li {
+										height: auto;
+										width: 100%;
+										border-bottom:1px solid #517179;
+									}
+									header nav .menu .menu-body > ul li:last-of-type {
+										border-bottom:0px solid #517179;
+									}
+								}
+							header nav .menu .menu-body > ul li.right {
+								position: absolute;
+								right: 0;
+							}
+								@media only screen and (max-width : 39.99em) {	
+									header nav .menu .menu-body > ul li.right {
+										position: initial;
+									}
+								}
+								header nav .menu .menu-body > ul li a{
+									padding:0 20px;
+									height: calc(100% - 5px);
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									box-sizing: content-box;
+									border-bottom: 5px solid transparent;
+									color: #000000;
+									font-weight:600;
+									cursor: pointer;
+									text-decoration: none;
+									transition: border-bottom 0.2s ease-in-out 0s;
+									-moz-transition: border-bottom 0.2s ease-in-out 0s;
+									-webkit-transition: border-bottom 0.2s ease-in-out 0s;
+									-o-transition: border-bottom 0.2s ease-in-out 0s;
+								}
+								@media screen and (min-width: 40em) and (max-width: 63.99em) {
+									header nav .menu .menu-body > ul li a{
+										padding:0 13px;
+									}
+								}
+								@media only screen and (max-width : 39.99em) {
+									header nav .menu .menu-body > ul li a {
+										width: auto;
+										height: auto;
+										padding-top: 5px;	
+										justify-content: flex-start;
+										padding: 16px 0px 10px 0px;
+										height: auto;
+									}
+								}
+								header nav .menu .menu-body > ul li a i{
+									margin-right: 8px;
+								}
+									header nav .menu .menu-body ul > li a:hover,
+									header nav .menu .menu-body ul > li a:focus,
+									header nav .menu .menu-body ul > li a.active{
+										border-bottom: 5px solid grey;
+									}
+									@media only screen and (min-width : 39.99em) and (hover: none) {
+										header nav .menu .menu-body > ul > li:not(:first-of-type) > a{
+											pointer-events: none;
+										}
+									}
+							@media only screen and (max-width : 39.99em) {
+								header nav .menu .menu-body > ul li a i.icon-arrow-fill-down {
+									display:none;
+								}
+							}
+						header nav .menu .menu-body > ul li > ul {
+							display:block;
+							visibility: hidden;
+							opacity: 0;
+							z-index:500;
+							width: 250px;
+							height: auto;
+							border-bottom-right-radius: 3px;
+							border-bottom-left-radius: 3px;
+							position: absolute;
+							padding: 0;
+							transition: visibility 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+							-moz-transition: visibility 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+							-webkit-transition: visibility 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+							-o-transition: visibility 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+						}
+							@media only screen and (max-width : 39.99em) {	
+								header nav .menu .menu-body > ul li > ul {
+									display:block;
+									visibility: visible;
+									z-index:0;
+									width: auto;
+									height: auto;
+									opacity: 1;
+									border-bottom-right-radius: 0px;
+									border-bottom-left-radius: 0px;
+									padding-top: 0;
+									padding-bottom: 0;
+									position:relative;
+									border-top: 1px solid #031e4f;
+								}
+							}
+						header nav .menu .menu-body > ul li:focus a + ul,
+						header nav .menu .menu-body > ul li:hover a + ul,
+						header nav .menu .menu-body > ul li:active a + ul,
+						header nav .menu .menu-body > ul li:focus-within a + ul,
+						header nav .menu .menu-body > ul li > ul:hover  { 
+							visibility: visible;
+							opacity: 1;
+						}
+							header nav .menu .menu-body > ul li > ul li {
+								display:block;	
+								height: auto; 	
+							}
+								@media only screen and (max-width : 39.99em) {	
+									header nav .menu .menu-body > ul li > ul li {
+										padding: 0;
+										width: 100%;
+										border-bottom:1px solid #031e4f; 	
+									}
+								}
+								header nav .menu .menu-body > ul li > ul li a {
+									height: auto;
+									padding: 11px 24px 11px 31px;
+									display: block;
+									border-bottom:none;
+									border-left: 4px solid transparent;
+								}
+								@media only screen and (max-width : 39.99em) {
+									header nav .menu .menu-body > ul li > ul li a {
+										width: auto;
+										padding: 13px 30px 13px 50px;	
+									}
+								}
+									header nav .menu .menu-body > ul li > ul li a:hover,
+									header nav .menu .menu-body > ul li > ul li a:focus{
+										border-left: 4px solid grey;
+										border-bottom:none;
+									}
+        </style>
+    </head>
+    <body>
+		<header>
+			<nav>
+				<input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox" checked="">
+				<label for="toggle-menu" class="button">MENU</label>
+				<div class="menu">
+					<div class="menu-head">
+						<label for="toggle-menu" class="button">X</label>
+					</div>
+					<div class="menu-body">
+						<ul>
+							<li><a href="#" title="lorem" tabindex="0">lorem</a></li>
+							<li><a href="#" title="ipsum" tabindex="0">ipsum</a></li>
+							<li><a href="#" title="dolor sit amet">dolor sit amet</a>
+								<ul>
+									<li><a href="#" title="nisl blandit">nisl blandit</a></li>
+									<li><a href="#" title="sociosqu">sociosqu</a></li>
+								</ul>
+								
+							</li>
+							<li><a href="#" title="consectetur" tabindex="0">consectetur</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+    <main>
+      <div class="container"></div>
+    </main>
+		<script>
+			
+		</script>
+    </body>
+</html>
