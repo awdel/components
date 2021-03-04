@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Demo</title>
         <style>
+            *{
+                box-sizing: border-box;
+            }
             header nav{
                 width: 100%;
                 height: 100%;
@@ -26,24 +29,6 @@
                     padding-left: 0px;
                 }
             }
-                header nav .mobile-search{
-                    display: none;
-                }
-                @media only screen and (max-width : 39.99em) {
-                    header nav .mobile-search {
-                        display: inline-flex;
-                        align-items: center;
-                        height: 100%;
-                        padding-right: 8px;
-                        border-right: 2px solid #112d31;
-                    }
-                    header nav .mobile-search a {
-                        display: flex;
-                    }
-                    header nav .mobile-search a .icon-search {
-                        transform: scale(0.9);
-                    }
-                }
                 header nav input.toggle-menu-checkbox,
                 header nav input.toggle-menu-checkbox + label {
                     display: none;
@@ -60,15 +45,10 @@
                         vertical-align: top;
                     }
                 }
-                    header nav input.toggle-menu-checkbox + label i.icon-menu {
-                        vertical-align:middle;
-                    }
                     header nav input.toggle-menu-checkbox + label span {
                         vertical-align:middle;
                         display: inline-block;
                         margin: 0 4px;
-                        font-size: 16px;
-                        font-family: proxima-nova;
                     }
                 header nav .menu{
                     height: 100%;
@@ -117,21 +97,18 @@
                     @media only screen and (max-width : 39.99em) {
                         header nav .menu .menu-body{
                             overflow: scroll;
-                            height: calc(100% - 48px);
+                            height: calc(100% - 32px);
                         }
                     }
                         header nav .menu .menu-body > ul {
                             position: relative;
                             list-style: none;
-                            margin-top: 0px;
                             padding: 0;
                             height: 100%;
                         }
                             @media only screen and (max-width : 39.99em) {
                                 header nav .menu .menu-body > ul {
-                                    margin-top: 66px;
-                                    margin-left: 26px;
-                                    margin-right: 26px;
+                                    margin: 24px 24px 48px 24px;
                                 }
                             }
                             header nav .menu .menu-body > ul li {
@@ -297,6 +274,7 @@
                                     <li><a href="#" title="nisl blandit">nisl blandit</a></li>
                                     <li><a href="#" title="sociosqu">sociosqu</a></li>
                                 </ul>
+                                
                             </li>
                             <li><a href="#" title="consectetur" tabindex="0">consectetur</a></li>
                         </ul>
@@ -307,9 +285,8 @@
         <main>
             <div class="container"></div>
         </main>
-        <footer>
-        </footer
         <script>
+            
         </script>
     </body>
 </html>
